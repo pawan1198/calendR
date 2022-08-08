@@ -36,3 +36,26 @@ calendR(month = 3,
         lunar.col = "gray60", # Color of the non-visible area of the moon
         lunar.size = 7)       # Size of the moons
 
+
+# Set the corresponding events
+events<-rep(NA,365)
+events[40:45]<-"Trip"
+events[213:240]<-"Holidays"
+events[252]<-"Birthday"
+events[359]<-"Christmas" 
+
+calendR(year=2022,
+        special.days=events,
+        special.col=c("pink","lightblue",
+                      "lightgreen","lightsalmon"),
+        legend.pos="top",
+        pdf=TRUE,
+        doc_name="my_calender1")
+
+calendR(year=2022,month=8,
+        start="M",
+        text=c("Running","Running",
+               "Class"), 
+        text.pos=c(5,16,25), 
+        text.size=4.5,
+        text.col = 4)
